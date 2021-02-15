@@ -1,0 +1,134 @@
+body {
+    font-family: 'Hanalei', cursive;
+    font-family: 'Teko', sans-serif;
+    color: #333;
+    background: #E5E7E9;
+}
+
+
+.main-wrap {
+    max-width: 500px;
+    margin: 100px auto;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background: #FDFEFE;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px 0 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #5DADE2;
+    background: #5DADE2;
+    color: #FDFEFE;
+}
+
+.remains {
+    width: 50px;
+    border-radius: 17px;
+    text-align: center;
+    padding: 3px;
+    color: #FDFEFE;
+    font-size: 24px;
+    background: #CACFD2;
+}
+
+.remains:hover {
+    background: #A6ACAF;
+}
+
+#date {
+    margin-top: 20px;
+    font-size: 28px;
+    text-align: center;
+}
+
+#todo-list {
+    height: 500px;
+    overflow: auto;
+}
+
+.list-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 0 20px;
+    cursor: pointer;
+    height: 45px;
+}
+
+#item {
+    margin: 0;
+    font-size: 20px;
+}
+
+.delete {
+    display: none;
+    animation: fadein 1s;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.bi {
+    margin-top: 6px;
+}
+
+#noMemo {
+    display: none;
+    text-align: center;
+    color: rgba(86, 101, 115, .8);
+
+}
+
+#noMemo>p {
+    font-size: 30px;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+
+    html,
+    body {
+        height: 100%;
+    }
+
+    .main-wrap {
+        max-width: 100%;
+        margin: 0 auto;
+        height: 100%;
+    }
+
+    .remains:hover {
+        background: #CACFD2;
+    }
+
+    .box {
+        height: 80%;
+    }
+
+    #todo-list {
+        height: 100%;
+    }
+
+    .input-group {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+}

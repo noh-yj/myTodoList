@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Todo-list | by noh-yj</title>
+
+    <meta name="author" content="noh-yj">
+    <meta name="description" content="나만의 방식으로 todo-list를 연습해보는 페이지입니다.">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, minimum-scale=1">
+    <!-- og tag -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="todo-list">
+    <meta property="og:description" content="SPA방식으로 만들어보는 todo-list">
+    <meta property="og:image" content="work-4997565_640.png">
+    <meta property="og:url" content="#">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="../static/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../static/favicon.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Hanalei&family=Teko&display=swap" rel="stylesheet">
+    <!-- Reset CSS -->
+    <link rel="stylesheet" href="../static/css/reset.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/index.css">
+
+    <!-- jQuery, Popper.js, Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+
+</head>
+
+<body>
+    <div class="main-wrap">
+
+        <div class="title">
+            <h2>
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" class="bi bi-pen"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M13.498.795l.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001zm-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708l-1.585-1.585z" />
+                </svg>
+                <span>Todo-List</span>
+            </h2>
+            <p class="remains" id="count">0</p>
+        </div>
+
+        <div id="date">
+            <p>0000년 00월 00일 0요일</p>
+        </div>
+
+        <div class="box">
+            <ul id="todo-list">
+                <div id="noMemo">
+                    <br /><br /><br />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor"
+                        class="bi bi-emoji-dizzy" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path
+                            d="M9.146 5.146a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708.708l-.647.646.647.646a.5.5 0 0 1-.708.708l-.646-.647-.646.647a.5.5 0 1 1-.708-.708l.647-.646-.647-.646a.5.5 0 0 1 0-.708zm-5 0a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 1 1 .708.708l-.647.646.647.646a.5.5 0 1 1-.708.708L5.5 7.207l-.646.647a.5.5 0 1 1-.708-.708l.647-.646-.647-.646a.5.5 0 0 1 0-.708zM10 11a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
+                    </svg>
+                    <br /><br /><br /><br /><br />
+                    <p>메모가 없습니다.</p>
+                    <br />
+                </div>
+            </ul>
+        </div>
+
+        <form class="input-group" action="../static/js/index.js" method="post">
+            <input type="text" class="form-control" maxlength="15" placeholder="이곳에 메모를 추가하세요." id="todoAdd" />
+            <span class="input-group-btn">
+                <button class="btn btn-primary" type="button" onclick="addTodo()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-plus-square-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z" />
+                    </svg>
+                </button>
+            </span>
+        </form>
+
+    </div>
+    <script src="../static/js/index.js"></script>
+</body>
+
+
+</html>
